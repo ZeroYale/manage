@@ -1,15 +1,18 @@
 /**
  * @Title: SoftwareController
- * @Description: 测试与前端的数据交互，主要完成json跨域
+ * @Description: 软件组成员表与前端交换数据处
  * @author 黄彦钊
  * @date 2019/9/23
  **/
 package com.wolf.material.controller;
+import com.alibaba.fastjson.JSONObject;
+import com.sun.javafx.collections.MappingChange;
 import com.wolf.material.pojo.SoftwareInfo;
 import com.wolf.material.service.SoftwareInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
+import java.util.*;
+import java.sql.Date;
 import java.util.List;
 @RestController//返回数据直接显示，而不是跳转
 @CrossOrigin(origins = "*",maxAge = 3600)//实现跨域注解
@@ -26,7 +29,7 @@ public class SoftwareController {
         System.out.println(softwareInfo);
         return softwareInfo;//返回json数据
     }
-
+    
     //页面访问localhost:8080/software/findOne,接收网页传来的json中id属性，到数据库查询id相同的人员信息并返回
     @RequestMapping(value="findOne", method = RequestMethod.GET, produces = "application/json;charset=UTF-8")
     //拦截有jsonInteractive的url,拦截该访问路径的json数据
@@ -34,4 +37,6 @@ public class SoftwareController {
         List<SoftwareInfo> softwareInfo = softwareInfoService.findOne(id);//调用service类方法
         return softwareInfo;//返回json数据
     }
+
+
 }

@@ -4,10 +4,11 @@ spring:
     druid:
       # 数据源配置
       username: root
-      password: root
-      url: jdbc:mysql://192.168.1.123:3306/wolf_material?serverTimezone=GMT%2B8&characterEncoding=UTF-8&useSSL=false  # 设置时区
+      password: 123456
+      url: jdbc:mysql://localhost:3306/robowolf_material?serverTimezone=GMT%2B8&characterEncoding=UTF-8&useSSL=false  # 设置时区
       driver-class-name: com.mysql.cj.jdbc.Driver
       type: com.alibaba.druid.pool.DruidDataSource
+
       # 初始化 最小 最大
       initial-size: 5
       min-idle: 5

@@ -6,6 +6,9 @@
  */
 package com.wolf.material.service;
 import com.wolf.material.pojo.SoftwareInfo;
+
+import javax.xml.crypto.Data;
+import java.sql.Date;
 import java.util.List;
 
 public interface SoftwareInfoService {
@@ -13,4 +16,6 @@ public interface SoftwareInfoService {
     List<SoftwareInfo> findAll() throws Exception;
     //根据id查找数据库中对应软件组成员信息
     List<SoftwareInfo> findOne(Integer id) throws Exception;
+
+
 }
