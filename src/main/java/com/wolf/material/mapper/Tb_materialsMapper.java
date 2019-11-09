@@ -24,8 +24,9 @@ public interface Tb_materialsMapper {
     @Delete("DELETE FROM tb_materials WHERE IID=#{Iid}")
     boolean deleteOne(Integer Iid)throws Exception;
 
-    @Update("update tb_materials set Ostate= where uid=#{uid}")
-    void updateBorrow(Integer uid) throws Exception;
+    @Update("update tb_materials set Istate='borrowed' where iid=#{iid}")
+    boolean updateBorrow(Integer uid) throws Exception;
 
-
+    @Update("update tb_materials set Istate='available' where iid=#{iid}")
+    boolean updateAvailable(Integer uid) throws Exception;
 }
