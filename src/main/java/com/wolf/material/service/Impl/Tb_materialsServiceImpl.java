@@ -26,4 +26,14 @@ public class Tb_materialsServiceImpl implements Tb_materialsService {
         return tb_materialsMapper.deleteOne(Iid);
     }
 
+    @Override
+    public Boolean updateBorrow(Integer Iid) throws Exception {
+        return tb_materialsMapper.updateBorrow(Iid);
+    }
+
+    @Override
+    public Boolean updateAvailable(Integer Iid) throws Exception {
+        return tb_materialsMapper.updateAvailable(Iid);
+    }
+
 }

@@ -47,6 +47,7 @@ public class Tb_mcheckoutController {
         if(tb_mcheckout.get(0).getOstate().equals("borrowed")){
             jsonObject.put("id", 400);//强制给数据
         }else {
+            tb_materialsService.updateBorrow(iid);
             temp.setIID(iid);
             temp.setUID(uid);
             temp.setOstate("borrowed");
@@ -70,6 +71,7 @@ public class Tb_mcheckoutController {
         if(uUser.get(0).getUpermission().equals("user")){
             jsonObject.put("id", 400);//强制给数据
         }else{
+            tb_materialsService.updateAvailable(iid);
             temp.setIID(iid);
             temp.setUID(uid);
             temp.setOstate("available");
