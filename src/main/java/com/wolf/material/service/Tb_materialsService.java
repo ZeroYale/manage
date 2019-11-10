@@ -11,4 +11,7 @@ import com.wolf.material.pojo.Tb_materials;
 public interface Tb_materialsService {
     Boolean insertOne(Tb_materials tb_materials) throws Exception;
     Boolean deleteOne(Integer Iid)throws Exception;
+
+    Boolean updateBorrow(Integer Iid)throws Exception;
+    Boolean updateAvailable(Integer Iid)throws Exception;
 }
